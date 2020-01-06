@@ -51,10 +51,17 @@ def SetStyle(name,color,height,bold,italic,underline,struck_out,horz):
     # DASHED虚线
     # NO_LINE没有
     # THIN实线
-    borders.left = xlwt.Borders.DASHED 
-    borders.right = xlwt.Borders.DASHED 
-    borders.top = xlwt.Borders.DASHED 
-    borders.bottom = xlwt.Borders.DASHED 
+    # borders.left = xlwt.Borders.DASHED 
+    # borders.right = xlwt.Borders.DASHED 
+    # borders.top = xlwt.Borders.DASHED 
+    # borders.bottom = xlwt.Borders.DASHED 
+    # 细实线:1，小粗实线:2，细虚线:3，中细虚线:4，大粗实线:5，双线:6，细点虚线:7
+    # 大粗虚线:8，细点划线:9，粗点划线:10，细双点划线:11，粗双点划线:12，斜点划线:13
+    borders.left = color
+    borders.right = color
+    borders.top = color
+    borders.bottom = color
+    
     borders.left_colour = color
     borders.right_colour = color
     borders.top_colour = color
