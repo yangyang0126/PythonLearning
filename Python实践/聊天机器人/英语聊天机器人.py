@@ -12,9 +12,11 @@ import os
  
 # 获取aiml的安装路径 
 def get_module_dir(name):
-    print("module", sys.modules[name])
+    #print(sys.modules[name])
+    
+    # __file__ is the pathname of the file from which the module was loaded, if it was loaded from a file
     path = getattr(sys.modules[name], '__file__', None)
-    print(path)
+    #print(path)
     if not path:
         raise AttributeError('module %s has not attribute __file__' % name)
     return os.path.dirname(os.path.abspath(path))
@@ -28,7 +30,7 @@ os.chdir(alice_path)
 # 创建机器人alice对象 
 alice = aiml.Kernel() 
 
-print("正在加载语料库")
+print("准备加载语料库")
 
 # 这里做一个判断
 # 如果是第一次加载语料库，就进入else部分，读取数据，同时保存资料至bot_brain.brn
